@@ -4,15 +4,16 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:background="@drawable/shape_wait_loading_bg"
         android:layout_gravity="center">
 
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/textColorWhite"/>
 
     </FrameLayout>
 

@@ -23,6 +23,7 @@
         <activity android:name=".ui.simple_mvp.activity.SimpleMvpActivity" />
         <activity android:name=".ui.multistate.MultiStateActivity" />
         <activity android:name=".ui.page_mvp.PageMvpActivity" />
+        <activity android:name=".ui.shape.ShapeViewActivity" />
     </application>
 
 </manifest>

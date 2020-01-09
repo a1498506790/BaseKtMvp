@@ -46,4 +46,6 @@ dependencies {
     //RecyclerView适配器
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta10'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha03'
+
+    implementation 'com.github.duanhong169:colorpicker:1.1.6'
 }

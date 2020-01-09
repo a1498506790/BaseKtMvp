@@ -42,6 +42,17 @@
         android:layout_marginRight="@dimen/dp16"
         android:layout_marginEnd="@dimen/dp16"/>
 
+    <Button
+        android:id="@+id/btnShapeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="代码编写Shape"
+        app:layout_constraintTop_toBottomOf="@+id/btnPageMvp"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

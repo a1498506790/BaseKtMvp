@@ -8,4 +8,20 @@
         <attr name="failText" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="ShapeTextView">
+        <attr name="stvShape">
+            <enum name="rectangle" value="0"/>
+            <enum name="oval" value="1"/>
+        </attr>
+        <attr name="stvNormalColor" format="color"/>
+        <attr name="stvPressedColor" format="color"/>
+        <attr name="stvCornerRadius" format="dimension"/>
+        <attr name="stvCornerTopLeftRadius" format="dimension"/>
+        <attr name="stvCornerTopRightRadius" format="dimension"/>
+        <attr name="stvCornerBottomLeftRadius" format="dimension"/>
+        <attr name="stvCornerBottomRightRadius" format="dimension"/>
+        <attr name="stvStrokeWidth" format="dimension"/>
+        <attr name="stvStrokeColor" format="color"/>
+    </declare-styleable>
+
 </resources>

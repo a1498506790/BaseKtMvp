@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/toolbar"/>
+
+    <com.example.basektmvp2.widget.shape.ShapeTextView
+        android:id="@+id/shapeView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="123"
+        android:gravity="center"
+        android:textColor="@color/textColorWhite"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarContainer"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvStrokeColor"
+        app:stvShape="rectangle"
+        app:stvNormalColor="#CDDC39"
+        app:stvPressedColor="#FFEB3B"
+        app:stvStrokeColor="#3F51B5"/>
+
+    <TextView
+        android:id="@+id/tvRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/sbRadius"
+        android:text="圆角"
+        android:layout_margin="@dimen/dp16"/>
+
+    <SeekBar
+        android:id="@+id/sbRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvTopLeftRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvRadius"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvTopLeftRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvRadius"
+        android:text="左上圆"
+        android:layout_margin="@dimen/dp16"/>
+
+    <SeekBar
+        android:id="@+id/sbTopLeftRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvTopLeftRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvTopLeftRadius"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvTopRightRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvTopLeftRadius"
+        android:text="右上圆"
+        android:layout_margin="@dimen/dp16"/>
+
+    <SeekBar
+        android:id="@+id/sbTopRightRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvTopLeftRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvTopRightRadius"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvBottomLeftRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvTopRightRadius"
+        android:text="右下圆"
+        android:layout_margin="@dimen/dp16"/>
+
+    <SeekBar
+        android:id="@+id/sbBottomLeftRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvTopLeftRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvBottomLeftRadius"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvBottomRightRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvBottomLeftRadius"
+        android:text="右下圆"
+        android:layout_margin="@dimen/dp16"/>
+
+    <SeekBar
+        android:id="@+id/sbBottomRightRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvTopLeftRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvBottomRightRadius"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvShape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shape"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvBottomRightRadius"
+        android:layout_margin="@dimen/dp16"/>
+
+    <Switch
+        android:id="@+id/swShape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvBottomRightRadius"
+        app:layout_constraintTop_toTopOf="@+id/tvShape"
+        app:layout_constraintBottom_toBottomOf="@+id/tvShape"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/tvColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="填充颜色"
+        app:layout_constraintBottom_toTopOf="@+id/tvShape"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:id="@+id/btnNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvColor"
+        app:layout_constraintTop_toTopOf="@+id/tvColor"
+        app:layout_constraintBottom_toBottomOf="@+id/tvColor"
+        android:text="默认颜色"
+        android:layout_marginLeft="@dimen/dp16"/>
+
+    <Button
+        android:id="@+id/btnPressed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/btnNormal"
+        app:layout_constraintTop_toTopOf="@+id/btnNormal"
+        app:layout_constraintBottom_toBottomOf="@+id/btnNormal"
+        android:text="按下颜色"
+        android:layout_marginLeft="@dimen/dp16"/>
+
+    <TextView
+        android:id="@+id/tvStrokeWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="边框大小"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvColor"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginBottom="25dp" />
+
+    <SeekBar
+        android:id="@+id/sbStrokeWidth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvStrokeWidth"
+        app:layout_constraintTop_toTopOf="@+id/tvStrokeWidth"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/tvStrokeColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="边框颜色"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvStrokeWidth"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:id="@+id/btnStrokeColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tvStrokeColor"
+        app:layout_constraintTop_toTopOf="@+id/tvStrokeColor"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStrokeColor"
+        android:text="边框颜色"
+        android:layout_marginLeft="@dimen/dp16"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

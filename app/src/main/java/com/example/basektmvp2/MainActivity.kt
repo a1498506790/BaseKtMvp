@@ -10,6 +10,7 @@ import com.example.basektmvp2.mvp.callback.NetCallback
 import com.example.basektmvp2.net.Api
 import com.example.basektmvp2.ui.multistate.MultiStateActivity
 import com.example.basektmvp2.ui.page_mvp.PageMvpActivity
+import com.example.basektmvp2.ui.shape.ShapeViewActivity
 import com.example.basektmvp2.ui.simple_mvp.activity.SimpleMvpActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,6 +28,10 @@ class MainActivity : BaseActivity() {
         }
         btnPageMvp.setOnClickListener {
             startActivity(Intent(this, PageMvpActivity::class.java))
+        }
+
+        btnShapeView.setOnClickListener {
+            startActivity(Intent(this, ShapeViewActivity::class.java))
         }
     }
 
