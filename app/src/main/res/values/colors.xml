@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+    <!--布局通用背景-->
+    <color name="colorBackground">#FFFFFF</color>
+
+    <!--文字颜色-->
+    <color name="textColorBlack">#333333</color>
+    <color name="textColorWhite">#FFFFFF</color>
+    <color name="textColor9">#999999</color>
+    <color name="textColor6">#666666</color>
+
+</resources>

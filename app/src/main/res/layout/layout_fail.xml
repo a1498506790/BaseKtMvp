@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorBackground">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_default_fail"/>
+
+    <TextView
+        android:id="@+id/tvFail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fail_default_text"
+        android:layout_marginTop="@dimen/dp12"
+        android:textSize="@dimen/sp14"
+        android:textColor="@color/textColor9"/>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MultiStateLayout">
+        <attr name="emptyResId" format="reference"/>
+        <attr name="emptyText" format="string"/>
+        <attr name="failResId" format="reference"/>
+        <attr name="failText" format="string"/>
+    </declare-styleable>
+
+</resources>
