@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.basektmvp2.R
 import com.example.basektmvp2.utils.StatusBarUtils
 import com.example.basektmvp2.widget.status.MultiStateLayout
 import com.example.basektmvp2.widget.status.OnFailClickListener
@@ -43,6 +44,10 @@ abstract class BaseActivity : AppCompatActivity(){
 
     fun initToolbar(title : String) : Toolbar{
         tvTitle.text = title
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black)
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
         return toolbar
     }
 

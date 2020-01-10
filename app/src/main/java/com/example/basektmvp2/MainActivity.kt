@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
     override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun onCreateActivity(savedInstanceState: Bundle?) {
-        initToolbar("演示功能")
+        initToolbar("演示功能").navigationIcon = null
         btnMultiState.setOnClickListener {
             startActivity(Intent(this, MultiStateActivity::class.java))
         }

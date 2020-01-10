@@ -6,9 +6,9 @@ import android.content.Context
 class App : Application(){
 
     companion object{
-        var app : App? = null
-        fun getContext() : Context?{
-            return app?.applicationContext
+        lateinit var app : App
+        fun getContext() : Context{
+            return app.applicationContext
         }
     }
 
