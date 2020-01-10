@@ -103,7 +103,7 @@ object StatusBarUtils {
         if (window != null) {
             val clazz = window.javaClass
             try {
-                var darkModeFlag = 0
+                val darkModeFlag: Int
                 val layoutParams = Class.forName("android.view.MiuiWindowManager\$LayoutParams")
                 val field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE")
                 darkModeFlag = field.getInt(layoutParams)

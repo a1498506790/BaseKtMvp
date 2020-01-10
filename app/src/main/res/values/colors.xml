@@ -9,6 +9,8 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#FF0000</color>
+    <color name="color9">#999999</color>
+    <color name="color6">#666666</color>
 
     <!--文字颜色-->
     <color name="textColorBlack">#333333</color>
