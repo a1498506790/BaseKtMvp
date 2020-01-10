@@ -5,7 +5,9 @@
     <color name="colorAccent">#000000</color>
 
     <!--布局通用背景-->
-    <color name="colorBackground">#FFFFFF</color>
+    <color name="windowBackground">#F8F8F8</color>
+
+    <color name="colorRed">#FF0000</color>
 
     <!--文字颜色-->
     <color name="textColorBlack">#333333</color>

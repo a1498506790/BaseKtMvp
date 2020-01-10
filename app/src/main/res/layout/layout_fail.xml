@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/colorBackground">
+    android:background="@color/windowBackground">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivFail"

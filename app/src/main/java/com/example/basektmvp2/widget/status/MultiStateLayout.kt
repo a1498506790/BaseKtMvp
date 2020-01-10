@@ -76,8 +76,9 @@ class MultiStateLayout : ConstraintLayout, View.OnClickListener {
     private fun showLoading() {
         if (loadingView == null) {
             loadingView = vsLoading.inflate()
+        }else{
+            loadingView?.visibility = View.VISIBLE
         }
-        loadingView?.visibility = View.VISIBLE
     }
 
     private fun showEmpty() {
@@ -85,8 +86,9 @@ class MultiStateLayout : ConstraintLayout, View.OnClickListener {
             emptyView = vsEmpty.inflate()
             if (emptyResId != 0) ivEmpty.setImageResource(emptyResId)
             if (!TextUtils.isEmpty(emptyText)) tvEmpty.text = emptyText
+        }else{
+            emptyView?.visibility = View.VISIBLE
         }
-        emptyView?.visibility = View.VISIBLE
     }
 
     private fun showFail() {
@@ -94,16 +96,18 @@ class MultiStateLayout : ConstraintLayout, View.OnClickListener {
             failView = vsFail.inflate()
             if (failResId != 0) ivFail.setImageResource(failResId)
             if (!TextUtils.isEmpty(failText)) tvFail.text = failText
+        }else{
+            failView?.visibility = View.VISIBLE
         }
-        failView?.visibility = View.VISIBLE
         failView?.setOnClickListener(this)
     }
 
     private fun showWaitLoading() {
         if (waitLoadingView == null) {
             waitLoadingView = vsWaitLoading.inflate()
+        }else{
+            waitLoadingView?.visibility = View.VISIBLE
         }
-        waitLoadingView?.visibility = View.VISIBLE
     }
 
     private fun hide() {
