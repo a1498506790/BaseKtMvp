@@ -6,7 +6,7 @@ import java.lang.reflect.Type
 class GsonUtils {
 
     companion object{
-        val gson by lazy { Gson() }
+        private val gson by lazy { Gson() }
 
         fun <T> jsonToBean(json: String, type: Type) : T{
             return gson.fromJson(json, type)

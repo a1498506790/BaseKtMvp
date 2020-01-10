@@ -1,7 +1,5 @@
 package com.example.basektmvp2.utils
-
 import android.annotation.SuppressLint
-import android.content.Context
 import android.widget.Toast
 
 /**
@@ -11,26 +9,26 @@ object ToastUtils {
 
     private var TOAST: Toast? = null
 
-    fun show(context: Context, resourceID: Int) {
-        show(context, resourceID, Toast.LENGTH_SHORT)
+    fun show(resourceID: Int) {
+        show(resourceID, Toast.LENGTH_SHORT)
     }
 
-    fun show(context: Context, text: String) {
-        show(context, text, Toast.LENGTH_SHORT)
+    fun show(text: String) {
+        show(text, Toast.LENGTH_SHORT)
     }
 
-    fun show(context: Context, resourceID: Int, duration: Int) {
-        val text = context.resources.getString(resourceID)
-        show(context, text, duration)
+    fun show(resourceID: Int, duration: Int) {
+        val text = ResUtils.getString(resourceID)
+        show(text, duration)
     }
 
     @SuppressLint("ShowToast")
-    fun show(context: Context, text: String, duration: Int) {
+    fun show(text: String, duration: Int) {
         TOAST = if (TOAST == null) {
-            Toast.makeText(context, text, duration)
+            Toast.makeText(ResUtils.getContext(), text, duration)
         } else {
             TOAST?.cancel()
-            Toast.makeText(context, text, duration)
+            Toast.makeText(ResUtils.getContext(), text, duration)
         }
         TOAST?.show()
     }

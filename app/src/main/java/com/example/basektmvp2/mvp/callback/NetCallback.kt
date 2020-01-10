@@ -1,6 +1,4 @@
 package com.example.basektmvp2.mvp.callback
-
-import com.example.basektmvp2.base.App
 import com.example.basektmvp2.mvp.base.BaseBean
 import com.example.basektmvp2.mvp.base.ParameterizedTypeImpl
 import com.example.basektmvp2.utils.GsonUtils
@@ -17,7 +15,7 @@ abstract class NetCallback<T>(var showToast : Boolean = true) : INetCallback{
                 onSuccess(bean)
             }else{
                 onFail(bean.errorCode, bean.errorMsg)
-                if (showToast) ToastUtils.show(App.getContext(), bean.errorMsg)
+                if (showToast) ToastUtils.show(bean.errorMsg)
             }
         }else{
             onFail(101, "解析失败")
@@ -38,7 +36,7 @@ abstract class NetCallback<T>(var showToast : Boolean = true) : INetCallback{
 
     override fun fail(t: Throwable) {
         onFail(-1, "请求失败")
-        if (showToast) ToastUtils.show(App.getContext(), "请求失败")
+        if (showToast) ToastUtils.show("请求失败")
     }
 
     abstract fun onSuccess(bean: BaseBean<T>)
