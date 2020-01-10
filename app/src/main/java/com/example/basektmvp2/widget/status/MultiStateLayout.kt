@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.annotation.IntDef
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.basektmvp2.R
+import com.example.basektmvp2.utils.NetStatusUtils
 import kotlinx.android.synthetic.main.layout_empty.view.*
 import kotlinx.android.synthetic.main.layout_fail.view.*
 import kotlinx.android.synthetic.main.layout_multi_state.view.*
@@ -94,10 +95,15 @@ class MultiStateLayout : ConstraintLayout, View.OnClickListener {
     private fun showFail() {
         if (failView == null) {
             failView = vsFail.inflate()
-            if (failResId != 0) ivFail.setImageResource(failResId)
-            if (!TextUtils.isEmpty(failText)) tvFail.text = failText
         }else{
             failView?.visibility = View.VISIBLE
+        }
+        if (NetStatusUtils.isNetworkConnected()){
+            ivFail.setImageResource(if (failResId != 0) failResId else R.drawable.ic_default_fail)
+            if (!TextUtils.isEmpty(failText)) tvFail.text = resources.getString(R.string.fail_default_text)
+        }else{
+            ivFail.setImageResource(R.drawable.ic_default_net_fail)
+            tvFail.text = resources.getString(R.string.fail_net_default_text)
         }
         failView?.setOnClickListener(this)
     }

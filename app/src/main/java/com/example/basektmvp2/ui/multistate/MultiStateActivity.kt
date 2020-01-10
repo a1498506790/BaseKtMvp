@@ -25,7 +25,6 @@ class MultiStateActivity : BaseActivity(){
                override fun click() {
                    Toast.makeText(this@MultiStateActivity, "点击了", Toast.LENGTH_SHORT).show()
                }
-
            })
         }
         btnWaitLoading.setOnClickListener {

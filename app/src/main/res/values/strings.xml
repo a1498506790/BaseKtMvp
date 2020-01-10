@@ -3,5 +3,6 @@
 
     <string name="empty_default_text">这里什么也没有~</string>
     <string name="fail_default_text" >加载失败 点击重试</string>
+    <string name="fail_net_default_text" >网络出错 点击重试</string>
 
 </resources>

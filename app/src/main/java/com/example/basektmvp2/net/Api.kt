@@ -1,12 +1,8 @@
 package com.example.basektmvp2.net
 
-class Api {
+object Api {
 
-    companion object {
+    const val BASE_URL = "https://www.wanandroid.com"
 
-        const val BASE_URL = "https://www.wanandroid.com"
-
-        const val TEST = "/wxarticle/chapters/json"
-
-    }
+    const val TEST = "/wxarticle/chapters/json"
 }
