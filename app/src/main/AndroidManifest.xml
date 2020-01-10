@@ -16,12 +16,13 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.simple_mvp.activity.SimpleMvpActivity" />
-        <activity android:name=".ui.multistate.MultiStateActivity" />
+        <activity android:name=".ui.multistate.MultiStateActivity"
+            android:theme="@style/AppTheme.windowBackgroundWhite"/>
         <activity android:name=".ui.page_mvp.PageMvpActivity" />
         <activity android:name=".ui.shape.ShapeViewActivity" />
     </application>

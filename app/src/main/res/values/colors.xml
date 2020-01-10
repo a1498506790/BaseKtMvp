@@ -7,6 +7,7 @@
     <!--布局通用背景-->
     <color name="windowBackground">#F8F8F8</color>
 
+    <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#FF0000</color>
 
     <!--文字颜色-->

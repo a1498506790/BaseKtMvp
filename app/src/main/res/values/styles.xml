@@ -11,4 +11,8 @@
         <item name="android:windowBackground">@color/windowBackground</item>
     </style>
 
+    <style name="AppTheme.windowBackgroundWhite">
+        <item name="android:windowBackground">@color/colorWhite</item>
+    </style>
+
 </resources>
