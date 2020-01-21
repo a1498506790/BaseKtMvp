@@ -7,9 +7,7 @@ class App : Application(){
 
     companion object{
         lateinit var app : App
-        fun getContext() : Context{
-            return app.applicationContext
-        }
+        val context: Context by lazy { app.applicationContext }
     }
 
     override fun onCreate() {

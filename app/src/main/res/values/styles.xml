@@ -11,6 +11,9 @@
         <item name="android:windowBackground">@color/windowBackground</item>
     </style>
 
+    <!--页面白色背景 在AndroidManifest中
+    <activity android:name=".ui.multistate.MultiStateActivity"
+            android:theme="@style/AppTheme.windowBackgroundWhite"/> 使用-->
     <style name="AppTheme.windowBackgroundWhite">
         <item name="android:windowBackground">@color/colorWhite</item>
     </style>

@@ -1,5 +1,6 @@
 package com.example.basektmvp2.utils
 
+import android.content.res.Resources
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
 import com.example.basektmvp2.base.App
@@ -9,7 +10,7 @@ import com.example.basektmvp2.base.App
  */
 object ResUtils {
 
-    fun getContext() = App.getContext()
+    fun getContext() = App.context
 
     fun getResources() = getContext().resources
 

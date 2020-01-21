@@ -10,7 +10,7 @@ import com.example.basektmvp2.base.App
 object NetStatusUtils {
 
     fun isNetworkConnected(): Boolean {
-        val mConnectivityManager = App.getContext()
+        val mConnectivityManager = App.context
             .getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val mNetworkInfo = mConnectivityManager.activeNetworkInfo
         if (mNetworkInfo != null) {

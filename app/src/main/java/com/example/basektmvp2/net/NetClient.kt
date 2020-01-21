@@ -7,7 +7,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class NetClient {
 
-    private lateinit var retrofit2: Retrofit
+    private var retrofit2: Retrofit
 
     companion object {
         val instance by lazy { NetClient() }

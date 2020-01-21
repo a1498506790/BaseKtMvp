@@ -24,12 +24,10 @@ object ToastUtils {
 
     @SuppressLint("ShowToast")
     fun show(text: String, duration: Int) {
-        TOAST = if (TOAST == null) {
-            Toast.makeText(ResUtils.getContext(), text, duration)
-        } else {
+        if (TOAST != null){
             TOAST?.cancel()
-            Toast.makeText(ResUtils.getContext(), text, duration)
         }
+        TOAST = Toast.makeText(ResUtils.getContext(), text, duration)
         TOAST?.show()
     }
 
