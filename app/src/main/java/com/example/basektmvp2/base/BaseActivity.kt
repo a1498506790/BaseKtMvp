@@ -28,11 +28,11 @@ abstract class BaseActivity : AppCompatActivity(){
     abstract fun onCreateActivity(savedInstanceState: Bundle?)
 
     private fun setStatusBar() {
-        StatusBarUtils.setTranslucentStatus(this)
+        StatusBarUtils.setTranslucentStatus(window)
         if (StatusBarUtils.isTranslucentStatus()) {
             val statusBarHeight = StatusBarUtils.getStatusBarHeight()
             toolbarContainer?.setPadding(0, statusBarHeight , 0, 0)
-            val isSetModeSuccess = StatusBarUtils.setStatusBarMode(this, true)
+            val isSetModeSuccess = StatusBarUtils.setStatusBarMode(window, true)
             if (!isSetModeSuccess) { //标题栏为白色时 状态栏字体没有变成黑色 防止重叠，添加一个灰色的状态栏
                 val statusBar = View(this)
                 statusBar.setBackgroundColor(Color.parseColor("#EEEEEE"))

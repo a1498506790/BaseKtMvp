@@ -5,6 +5,7 @@ import android.app.Activity
 import android.graphics.Color
 import android.os.Build
 import android.view.View
+import android.view.Window
 import android.view.WindowManager
 import com.example.basektmvp2.base.App
 
@@ -13,16 +14,15 @@ import com.example.basektmvp2.base.App
  */
 object StatusBarUtils {
 
-    fun setTranslucentStatus(activity: Activity) {
+    fun setTranslucentStatus(window: Window) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window = activity.window
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = Color.TRANSPARENT
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            activity.window.setFlags(
+            window.setFlags(
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
             )
@@ -45,10 +45,10 @@ object StatusBarUtils {
     /**
      * 设置状态栏模式 暗色还是亮色
      */
-    fun setStatusBarMode(activity: Activity, isDark: Boolean): Boolean {
+    fun setStatusBarMode(window: Window, isDark: Boolean): Boolean {
         if (isTranslucentStatus()) {
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                val decorView = activity.window.decorView
+                val decorView = window.decorView
                 if (isDark) {
                     decorView.systemUiVisibility =
                         View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
@@ -57,72 +57,65 @@ object StatusBarUtils {
                 }
                 true
             } else {
-                if (setFlyMeStatusBarMode(activity, isDark)) {
+                if (setFlyMeStatusBarMode(window, isDark)) {
                     true
                 } else
-                    setMiUiStatusBarMode(activity, isDark)
+                    setMiUiStatusBarMode(window, isDark)
             }
         }
         return false
     }
 
-    private fun setFlyMeStatusBarMode(activity: Activity, isDark: Boolean): Boolean {
+    private fun setFlyMeStatusBarMode(window: Window, isDark: Boolean): Boolean {
         var result = false
-        val window = activity.window
-        if (window != null) {
-            try {
-                val lp = window.attributes
-                val darkFlag = WindowManager.LayoutParams::class.java
-                    .getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON")
-                val meizuFlags = WindowManager.LayoutParams::class.java
-                    .getDeclaredField("meizuFlags")
-                darkFlag.isAccessible = true
-                meizuFlags.isAccessible = true
-                val bit = darkFlag.getInt(null)
-                var value = meizuFlags.getInt(lp)
-                if (isDark) {
-                    value = value or bit
-                } else {
-                    value = value and bit.inv()
-                }
-                meizuFlags.setInt(lp, value)
-                window.attributes = lp
-                result = true
-            } catch (e: Exception) {
-                e.printStackTrace()
+        try {
+            val lp = window.attributes
+            val darkFlag = WindowManager.LayoutParams::class.java
+                .getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON")
+            val meizuFlags = WindowManager.LayoutParams::class.java
+                .getDeclaredField("meizuFlags")
+            darkFlag.isAccessible = true
+            meizuFlags.isAccessible = true
+            val bit = darkFlag.getInt(null)
+            var value = meizuFlags.getInt(lp)
+            if (isDark) {
+                value = value or bit
+            } else {
+                value = value and bit.inv()
             }
-
+            meizuFlags.setInt(lp, value)
+            window.attributes = lp
+            result = true
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
         return result
     }
 
     @SuppressLint("PrivateApi")
-    private fun setMiUiStatusBarMode(activity: Activity, dark: Boolean): Boolean {
+    private fun setMiUiStatusBarMode(window: Window, dark: Boolean): Boolean {
         var result = false
-        val window = activity.window
-        if (window != null) {
-            val clazz = window.javaClass
-            try {
-                val darkModeFlag: Int
-                val layoutParams = Class.forName("android.view.MiuiWindowManager\$LayoutParams")
-                val field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE")
-                darkModeFlag = field.getInt(layoutParams)
-                val extraFlagField = clazz.getMethod(
-                    "setExtraFlags",
-                    Int::class.javaPrimitiveType,
-                    Int::class.javaPrimitiveType
-                )
-                if (dark) {
-                    extraFlagField.invoke(window, darkModeFlag, darkModeFlag)//状态栏透明且黑色字体
-                } else {
-                    extraFlagField.invoke(window, 0, darkModeFlag)//清除黑色字体
-                }
-                result = true
-            } catch (e: Exception) {
-                e.printStackTrace()
+        val clazz = window.javaClass
+        try {
+            val darkModeFlag: Int
+            val layoutParams = Class.forName("android.view.MiuiWindowManager\$LayoutParams")
+            val field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE")
+            darkModeFlag = field.getInt(layoutParams)
+            val extraFlagField = clazz.getMethod(
+                "setExtraFlags",
+                Int::class.javaPrimitiveType,
+                Int::class.javaPrimitiveType
+            )
+            if (dark) {
+                extraFlagField.invoke(window, darkModeFlag, darkModeFlag)//状态栏透明且黑色字体
+            } else {
+                extraFlagField.invoke(window, 0, darkModeFlag)//清除黑色字体
             }
-
+            result = true
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
+
         return result
     }
 
