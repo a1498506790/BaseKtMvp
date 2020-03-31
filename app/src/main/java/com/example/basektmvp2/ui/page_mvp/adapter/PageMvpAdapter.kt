@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.basektmvp2.R
 import com.example.basektmvp2.ui.page_mvp.bean.PageMvpBean
 
-class PageMvpAdapter(list: ArrayList<PageMvpBean>)
+class PageMvpAdapter(list: ArrayList<PageMvpBean>?)
     : BaseQuickAdapter<PageMvpBean, BaseViewHolder>(R.layout.item_page_mvp, list)
     , LoadMoreModule{
 

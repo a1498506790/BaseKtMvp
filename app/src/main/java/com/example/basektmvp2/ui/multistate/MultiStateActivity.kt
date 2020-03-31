@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.basektmvp2.R
 import com.example.basektmvp2.base.BaseActivity
+import com.example.basektmvp2.utils.ToastUtils
 import com.example.basektmvp2.widget.status.MultiStateLayout
 import com.example.basektmvp2.widget.status.OnFailClickListener
 import kotlinx.android.synthetic.main.activity_multi_state.*
@@ -23,7 +24,7 @@ class MultiStateActivity : BaseActivity(){
         btnFail.setOnClickListener {
            showFail(object : OnFailClickListener{
                override fun click() {
-                   Toast.makeText(this@MultiStateActivity, "点击了", Toast.LENGTH_SHORT).show()
+                   ToastUtils.show("点击了")
                }
            })
         }
