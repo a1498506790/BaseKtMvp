@@ -1,7 +1,9 @@
 package com.example.basektmvp2.mvp.callback
+import com.example.basektmvp2.R
 import com.example.basektmvp2.mvp.base.BaseBean
 import com.example.basektmvp2.mvp.base.ParameterizedTypeImpl
 import com.example.basektmvp2.utils.GsonUtils
+import com.example.basektmvp2.utils.ResUtils
 import com.example.basektmvp2.utils.ToastUtils
 import java.lang.Exception
 import java.lang.reflect.ParameterizedType
@@ -18,7 +20,7 @@ abstract class NetCallback<T>(var showToast : Boolean = true) : INetCallback{
                 if (showToast) ToastUtils.show(bean.errorMsg)
             }
         }else{
-            onFail(101, "解析失败")
+            onFail(101, ResUtils.getString(R.string.parsing_fail))
         }
     }
 
@@ -35,8 +37,8 @@ abstract class NetCallback<T>(var showToast : Boolean = true) : INetCallback{
     }
 
     override fun fail(t: Throwable) {
-        onFail(-1, "请求失败")
-        if (showToast) ToastUtils.show("请求失败")
+        onFail(-1, ResUtils.getString(R.string.request_net_fail))
+        if (showToast) ToastUtils.show(ResUtils.getString(R.string.request_net_fail))
     }
 
     abstract fun onSuccess(bean: BaseBean<T>)
