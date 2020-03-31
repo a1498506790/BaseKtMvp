@@ -23,7 +23,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         window?.let {
             it.setBackgroundDrawableResource(android.R.color.transparent)
             val attributes = it.attributes
-            attributes.gravity = Gravity.TOP
+            attributes.gravity = Gravity.CENTER
             attributes.width = WindowManager.LayoutParams.MATCH_PARENT
             it.attributes = attributes
         }

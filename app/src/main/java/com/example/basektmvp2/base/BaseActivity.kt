@@ -1,5 +1,4 @@
 package com.example.basektmvp2.base
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +6,7 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.basektmvp2.R
+import com.example.basektmvp2.utils.ResUtils
 import com.example.basektmvp2.utils.StatusBarUtils
 import com.example.basektmvp2.widget.status.MultiStateLayout
 import com.example.basektmvp2.widget.status.OnFailClickListener
@@ -35,7 +35,7 @@ abstract class BaseActivity : AppCompatActivity(){
             val isSetModeSuccess = StatusBarUtils.setStatusBarMode(window, true)
             if (!isSetModeSuccess) { //标题栏为白色时 状态栏字体没有变成黑色 防止重叠，添加一个灰色的状态栏
                 val statusBar = View(this)
-                statusBar.setBackgroundColor(Color.parseColor("#EEEEEE"))
+                statusBar.setBackgroundColor(ResUtils.getColor(R.color.statusBarColor))
                 findViewById<ViewGroup>(android.R.id.content).addView(statusBar)
                 statusBar.layoutParams.height = statusBarHeight
             }

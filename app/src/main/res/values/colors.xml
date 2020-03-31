@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
 
+    <color name="statusBarColor">#EEEEEE</color>
     <!--布局通用背景-->
     <color name="windowBackground">#F8F8F8</color>
 

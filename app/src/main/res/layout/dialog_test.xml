@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_margin="26dp"
         android:background="@color/colorWhite"
         android:gravity="center"
         android:text="测试dialog"/>
