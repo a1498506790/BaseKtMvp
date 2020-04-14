@@ -16,6 +16,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreateActivity(savedInstanceState: Bundle?) {
         initToolbar("演示功能").navigationIcon = null
+
         btnMultiState.setOnClickListener {
             startActivity(Intent(this, MultiStateActivity::class.java))
         }

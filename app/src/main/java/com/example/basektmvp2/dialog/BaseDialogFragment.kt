@@ -29,4 +29,28 @@ abstract class BaseDialogFragment : DialogFragment() {
         }
     }
 
+    /**
+     * 设置弹框弹出得位置
+     */
+    fun setGravity(gravity : Int){
+        val window = dialog?.window
+        window?.let {
+            val attributes = it.attributes
+            attributes.gravity = gravity
+            it.attributes = attributes
+        }
+    }
+
+    /**
+     * 设置弹框的进出动画
+     */
+    fun setWindowAnimations(windowAnimations : Int){
+        val window = dialog?.window
+        window?.let {
+            val attributes = it.attributes
+            attributes.windowAnimations = windowAnimations
+            it.attributes = attributes
+        }
+    }
+
 }
